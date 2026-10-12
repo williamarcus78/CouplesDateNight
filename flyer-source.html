@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Couples Date Night</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Caveat:wght@700&display=block">
+<style>
+@page { size: 8.5in 11in; margin: 0; }
+:root {
+  --bg: #eef1f6; --surface: #ffffff; --fg: #1b2a4a; --fg-2: #5a6682; --line: #d3dae7; --perf: #b9c3d6;
+  --accent: #c8506b; --accent-ink: #a63a55; --accent-soft: #f7dfe5; --butter: #f4d58d;
+  --dark: #1b2a4a; --dark-muted: rgba(243,245,250,0.74); --dark-line: rgba(243,245,250,0.2);
+  --display: "Bricolage Grotesque", "Avenir Next", sans-serif; --font: "Figtree", "Avenir Next", sans-serif;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font: 400 13pt/1.5 var(--font); }
+.page { width: 8.5in; height: 11in; padding: 0.5in 0.65in 0.45in; display: flex; flex-direction: column; gap: 0.24in; overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+
+.top { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 15pt; letter-spacing: -0.01em; }
+.logo svg circle { fill: none; stroke-width: 2.4; }
+.eyebrow { font-size: 9pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); }
+
+h1 { font-family: var(--display); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95; font-size: 54pt; margin: 0; }
+h1 em { font-style: normal; color: var(--accent); }
+.intro { font-size: 13pt; color: var(--fg-2); max-width: 6.2in; margin: 0.12in 0 0; }
+
+.tickets { display: grid; gap: 0.18in; }
+.ticket { display: grid; grid-template-columns: 1.55in 1fr; border-radius: 18px; position: relative; box-shadow: 0 1px 2px rgba(27,42,74,.06), 0 10px 24px -14px rgba(27,42,74,.25); }
+.stub { display: grid; place-content: center; justify-items: center; text-align: center; gap: 2px; border-right: 2px dashed; position: relative; padding: 0.2in 0.1in; }
+.stub::before, .stub::after { content: ""; position: absolute; right: -11px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); }
+.stub::before { top: -10px; } .stub::after { bottom: -10px; }
+.mo { font-size: 10pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.day { font-family: var(--display); font-size: 64pt; font-weight: 800; line-height: .9; letter-spacing: -0.04em; }
+.wd { font-size: 10.5pt; font-weight: 600; }
+.body { padding: 0.22in 0.32in; display: grid; gap: 8px; align-content: center; }
+.kicker { font-size: 8.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+h2 { font-family: var(--display); font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; font-size: 27pt; margin: 0; }
+.desc { font-size: 12pt; margin: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 11pt; font-weight: 500; }
+.meta span { display: inline-flex; align-items: center; gap: 6px; }
+.meta svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.rsvp { justify-self: start; margin-top: 10px; display: inline-flex; align-items: center; gap: 16px; padding: 9px 9px 9px 24px; border-radius: 999px; font-family: var(--display); font-weight: 800; font-size: 17pt; letter-spacing: -0.01em; box-shadow: 0 8px 18px -8px rgba(0,0,0,.45); }
+.rsvp .arr { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; }
+.rsvp svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.rsvp-wrap { position: relative; justify-self: start; display: inline-block; }
+.rsvp-wrap .rsvp { display: inline-flex; }
+.pointer { position: absolute; left: calc(100% + 8px); top: -46px; width: 140px; height: 90px; overflow: visible; }
+.tap { position: absolute; left: calc(100% + 146px); top: -50px; font-family: "Caveat", "Bradley Hand", cursive; font-weight: 700; font-size: 25pt; line-height: 1; color: #ef4b5c; transform: rotate(-7deg); white-space: nowrap; }
+.pointer path { fill: none; stroke: #ef4b5c; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.t-dark { background: var(--dark); color: #f3f5fa; }
+.t-dark .stub { border-color: var(--dark-line); }
+.t-dark .mo, .t-dark .kicker { color: var(--butter); }
+.t-dark .wd, .t-dark .meta, .t-dark .desc { color: var(--dark-muted); }
+.t-dark .rsvp { background: var(--butter); color: var(--fg); }
+.t-dark .rsvp .arr { background: var(--fg); color: var(--butter); }
+
+.t-light { background: var(--surface); }
+.t-light .stub { background: var(--accent-soft); border-color: var(--perf); border-radius: 18px 0 0 18px; }
+.t-light .mo, .t-light .kicker { color: var(--accent-ink); }
+.t-light .wd, .t-light .meta { color: var(--fg-2); }
+.t-light .rsvp { background: var(--accent); color: #fff; }
+.t-light .rsvp .arr { background: #fff; color: var(--accent); }
+
+.how { display: flex; justify-content: space-between; align-items: center; gap: 0.3in; background: var(--surface); border: 2px dashed var(--perf); border-radius: 16px; padding: 0.2in 0.28in; }
+.how b { font-family: var(--display); font-size: 15pt; font-weight: 800; letter-spacing: -0.01em; display: block; }
+.how p { margin: 2px 0 0; font-size: 11pt; color: var(--fg-2); }
+.phone { font-family: var(--display); font-size: 22pt; font-weight: 800; letter-spacing: -0.02em; color: var(--accent); white-space: nowrap; }
+.foot { margin-top: auto; display: flex; justify-content: space-between; font-size: 9.5pt; color: var(--fg-2); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div class="logo">
+      <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><circle cx="12" cy="11" r="8.5" stroke="#1b2a4a"/><circle cx="22" cy="11" r="8.5" stroke="#c8506b"/></svg>
+      Couples Date Night
+    </div>
+    <span class="eyebrow">Fall 2026 · Memphis</span>
+  </div>
+
+  <header>
+    <h1>Table for two,<br><em>and a few more.</em></h1>
+    <p class="intro">Grab your favorite person and put a date night on the calendar. Expect good food, real conversation, more laughing than you planned on, and a room full of couples who get it.</p>
+  </header>
+
+  <div class="tickets">
+    <section class="ticket t-dark">
+      <div class="stub"><span class="mo">Oct 2026</span><span class="day">16</span><span class="wd">Friday</span></div>
+      <div class="body">
+        <span class="kicker">Next up</span>
+        <h2>Love and Respect</h2>
+        <p class="desc">Husbands, love your wives. Wives, respect your husbands. (Ephesians 5:33) A night on what that looks like on an ordinary Friday, and why it changes everything.</p>
+        <div class="meta">
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>7–9pm</span>
+          <span><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>255 N. Highland</span>
+        </div>
+        <span class="rsvp-wrap"><a class="rsvp" href="sms:+19019213322?&amp;body=We're%20in%20for%20Love%20and%20Respect%20on%20Fri%2C%20Oct%2016!%20-%20">RSVP by text
+          <span class="arr"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a><svg class="pointer" viewBox="0 0 140 90" aria-hidden="true"><path d="M128 6 C 120 56, 66 74, 14 64"/><path d="M27.3 59.7 L14 64 L24.4 73.4"/></svg><span class="tap" aria-hidden="true">Tap here!</span></span>
+      </div>
+    </section>
+
+    <section class="ticket t-light">
+      <div class="stub"><span class="mo">Nov 2026</span><span class="day">6</span><span class="wd">Friday</span></div>
+      <div class="body">
+        <h2>Communicating &amp; Fighting Fair</h2>
+        <div class="meta">
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>7–9pm</span>
+          <span><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>255 N. Highland</span>
+        </div>
+        <a class="rsvp" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Couples%20Date%20Night%3A%20Communicating%20%26%20Fighting%20Fair&amp;dates=20261106T190000%2F20261106T210000&amp;ctz=America%2FChicago&amp;location=255%20N.%20Highland%2C%20Memphis%2C%20TN&amp;details=Couples%20Date%20Night.%20Line%20up%20a%20sitter%20and%20grab%20your%20favorite%20person.%20Questions%20or%20RSVP%3A%20text%20%28901%29%20921-3322.">Save the date
+          <span class="arr"><svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </section>
+  </div>
+
+  <div class="how">
+    <div><b>Save your seats</b><p>Tap an RSVP button on your phone, or just text us your names and which night.</p></div>
+    <a class="phone" href="sms:+19019213322">(901) 921-3322</a>
+  </div>
+
+  <div class="foot"><span>Couples Date Night · Memphis</span><span>Line up a sitter. We'll bring the conversation.</span></div>
+</div>
+</body>
+</html>
